@@ -1,5 +1,5 @@
 <?php
-sessionn_start();
+session_start();
 require "includes/constants.php";
 require "includes/dbConnection.php";
 
