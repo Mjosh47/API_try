@@ -32,7 +32,8 @@ Is used to address several industry verticals such as Consumer devices, Automoti
 
         public function footer(){
             ?>
-            <div class="footer">
+        <footer class="pt-3 mt-4 text-body-secondary border-top">
+        
                 Copyright &copy; ICS <?php print date("Y"); ?>
             </div>
         </body>
