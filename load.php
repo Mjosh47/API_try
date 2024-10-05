@@ -1,4 +1,5 @@
 <?php
+sessionn_start();
 require "includes/constants.php";
 require "includes/dbConnection.php";
 
@@ -15,6 +16,7 @@ function ClassAutoload($ClassName){
    }
 }
 spl_autoload_register('ClassAutoload');
+$ObjGlob = new fncs();
 
 // Creating instances of all classes
     $ObjLayouts = new layouts();
