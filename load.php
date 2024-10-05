@@ -2,6 +2,7 @@
 session_start();
 require "includes/constants.php";
 require "includes/dbConnection.php";
+require "lang/en.php";
 
 // Class Auto Load
 function ClassAutoload($ClassName){
@@ -17,6 +18,7 @@ function ClassAutoload($ClassName){
 }
 spl_autoload_register('ClassAutoload');
 $ObjGlob = new fncs();
+$ObjSendMail = new SendMail();
 
 // Creating instances of all classes
     $ObjLayouts = new layouts();
@@ -25,6 +27,9 @@ $ObjGlob = new fncs();
     $Objforms = new forms();
     $conn = new dbConnection(DBTYPE, HOSTNAME, DBPORT, HOSTUSER, HOSTPASS, DBNAME);
 
+// Create process instances
 
+$ObjAuth = new auth();
+$ObjAuth->signup($conn, $ObjGlob, $ObjSendMail, $lang, $conf);
 
 
